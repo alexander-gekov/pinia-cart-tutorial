@@ -26,5 +26,9 @@ export const useCartStore = defineStore('cart', () => {
         items.value.splice(index, 1);
     } // action
 
-    return { items, itemsCount, groupedItems, addItem, removeItem}
+    const $reset = () => {
+        items.value = [];
+    } // action $reset
+
+    return { items, itemsCount, groupedItems, addItem, removeItem, $reset}
 });
